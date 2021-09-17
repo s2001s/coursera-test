@@ -1,0 +1,5773 @@
+
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta content="no-cache" http-equiv="PRAGMA">
+<meta content="private" http-equiv="CACHE-CONTROL">
+<meta content="no-store" http-equiv="CACHE-CONTROL">
+<meta content="must-revalidate" http-equiv="CACHE-CONTROL">
+<meta content="post-check=0,pre-check=0" http-equiv="CACHE-CONTROL">
+<meta content="-1" http-equiv="Expires">
+<title>Welcome to HDFC Bank NetBanking</title>
+<link href="./RS_eng_new.css" type="text/css" rel="STYLESHEET">
+<script src="./RS_01_eng.js(1).download" language="javascript"></script><script language="javascript">
+
+//------------------------------------------------------------------------------
+var leftMenuRefreshTXN = "-";  /*ENH - 08/10/2013 - Shahzad D - MMID*/
+var leftMenuPopUpTxn	= "-"; /*Added by Meenakshi for Pop-up for Aadhaar Updation*/
+var bFlashcustomerupdateFlag = false;    /* ADD-08/09/2014-Contact Details Updation-ShahzadD */
+var contactChildWindow = "";    /* ADD-08/09/2014-Contact Details Updation-ShahzadD */
+
+var count 		= 0;
+
+var rolecount 	= 0;
+
+var arr_str	;
+
+var bAcctFlag = false;
+
+var bTransferFlag = false;
+
+var bBillsFlag = false;
+
+var bCreditCardFlag = false;
+
+var bLoansFlag = false;
+
+var bMerchantFlag = false;
+
+var bDepositoryFlag = false;
+
+var bDematFlag = true;		/* IL-ADD-18/06/2012-SandeepSax-START */
+
+var bChgPwdFlag = false;
+
+var bAlertFlag = false;
+
+var bMobFlag = false;
+
+var bProfileFlag = false;
+
+var bOnlineRegFlag = false;
+
+var bEmailFlag = false;
+
+var bInvFlag = false;
+
+var bDebitCardFlag = false;
+
+var bLoanFlag = false;
+
+var bMobileRegFlag = false;
+
+var bSmartBuyFlag = false ;        /* Mustakim For FS_502_smartbuy on 3/7/2015 start*/
+var SMARTBUY_MNEMONIC="smartbuyreg";	       /* Mustakim For FS_502_smartbuy on 3/7/2015 start (Move this entry in RS_01_eng.js when cache issue rectified)*/
+
+var bSocialBankingFlag = false ;        /* Upwan for FS_462_socialbanking on 3/7/2015 start*/
+
+var email = "";
+
+var l_txn_req = "accounts";
+
+var l_clicked = false;
+
+var l_token2 = "";
+
+var l_token3 = "";
+
+/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+
+var l_flashtab	=	"";
+
+var l_flashtxn	=	"";
+
+var bFlashAcctFlag = false;
+
+var bFlashTransferFlag = false;
+
+var bFlashBillsFlag = false;
+
+var bFlashCreditCardFlag = false;
+
+var bFlashLoansFlag = false;
+
+var bFlashMerchantFlag = false;
+
+var bFlashDepositoryFlag = false;
+
+var bFlashDematFlag = false;
+
+var bFlashChgPwdFlag = false;
+
+var bFlashAlertFlag = false;
+
+var bFlashMobFlag = false;
+
+var bFlashProfileFlag = false;
+
+var bFlashOnlineRegFlag = false;
+
+var bFlashEmailFlag = false;
+
+var bFlashInvFlag = false;
+
+var bFlashDebitCardFlag = false;
+
+var bFlashLoanFlag = false;
+
+var bFlashMobileRegFlag = false;
+
+var bFlashSmartBuyRegFlag = false; /* Mustakim For FS_502_smartbuy on 3/7/2015 start */
+
+var bFlashSocialBankingRegFlag = false; /* Upwan for FS_462_socialbanking on 3/7/2015 start */
+
+var bFlashOfferFlag = false;    /* Smartbuy_within_Netbanking-13/09/2013-Naeem M. Sayyed-ADDED */
+
+var bFlashInsurerFlag = false;    /* NetBanking UI Revamp-13/08/2014-Sandeep Saxena-ADDED */
+var bInsurFlag = false;		/* NetBanking UI Revamp-13/08/2014-Sandeep Saxena-ADDED */
+
+var bFlashPersuserFlag = false;    /* 06-june-2016 Pratik Kashid FS_CCR_0498_Personalization of user id -ADDED */
+var bPersuserFlag = false;		/* 06-june-2016 Pratik Kashid FS_CCR_0498_Personalization of user id  start-ADDED */
+
+/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+
+var bOfferFlag = false;		/* Smartbuy_within_Netbanking-13/09/2013-Naeem M. Sayyed-ADDED */
+
+var l_curr_login_date = "2021-09-17 10:15:34";
+
+var l_hour = "10";
+
+var l_minute = "15";
+
+var l_temp = "" + ((l_hour > 12) ? l_hour - 12 : l_hour);
+
+l_temp += ((l_minute < 10) ? ":" : ":") + l_minute;
+
+l_temp += (l_hour >= 12) ? " P.M." : " A.M.";
+
+l_curr_login_date =l_curr_login_date.substr(8,2) + " "+ getMonth(l_curr_login_date.substr(5,2)) + " "+ l_curr_login_date.substr(0,4);
+
+var l_display_curr_lgn = "[Current Log in: " + l_curr_login_date +"  " + l_temp +"  IST]";
+
+
+
+var flexat_date = "2021-09-17 10:15:34";
+
+var flexat_date = flexat_date.substr(8,2) + "/"+flexat_date.substr(5,2) + "/"+ flexat_date.substr(0,4);
+
+
+
+var l_tp = "2021-09-07 19:19:17.0";
+
+var l_year = "2021";
+
+var l_month = "09";
+
+var l_day = "07";
+
+var l_hour = "19";
+
+var l_minute = "19";
+
+var l_temp = "" + ((l_hour > 12) ? l_hour - 12 : l_hour);
+
+l_temp += ((l_minute < 10) ? ":" : ":") + l_minute;
+
+l_temp += (l_hour >= 12) ? " P.M." : " A.M.";
+
+var displayDate = getMonth (l_month) + " "+l_day +" "+l_year+" "+l_temp;
+
+var l_invtoken1;
+
+var p_dp_id_1   = '';		
+var p_acct_no_1     =  '';		
+var p_psm_flag ='';				
+
+var l_fireAppClicked = false;
+
+function getMonth (p_month) {
+
+	if (p_month == '01') {
+
+	 	return 'Jan';
+
+	} else if (p_month == '02') {
+
+ 	 	return 'Feb';
+
+	} else if ( p_month == '03') {
+
+ 		return 'Mar';
+
+	} else if (p_month == '04') {
+
+		return 'Apr';
+
+	} else if (p_month == '05') {
+
+		 return 'May';
+
+	} else if (p_month == '06') {
+
+		 return 'Jun';
+
+	} else if (p_month == '07') {
+
+		 return 'Jul';
+
+	} else if (p_month == '08') {
+
+		 return 'Aug';
+
+	} else if (p_month == '09') {
+
+		 return 'Sep';
+
+	} else if (p_month == '10') {
+
+		 return 'Oct';
+
+	} else if (p_month == '11') {
+
+		 return 'Nov';
+
+	} else if (p_month == '12') {
+
+		 return 'Dec';
+
+	}
+
+}
+
+
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "OFT";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "CIP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "CLE";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "CUE";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "FDR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "RDO";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "FCN";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "FSS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "SUS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "TDL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "RDL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "FCL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "CSS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "SBI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "ASM";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "SIN";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "STA";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "ASR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "LOA";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "RDS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "insurance";
+	var tmp2 = "";
+	var tmp3 = "GLI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'insurance';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "insurance";
+	var tmp2 = " ";
+	var tmp3 = "ERG";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'insurance';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "CSI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "TXI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "VAG";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "HIQ";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "CIB";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "MBE";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "KYC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "UFD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "SCH";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "CBR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "DDI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "CPN";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "EMR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "CCP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "TDS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = " ";
+	var tmp2 = " ";
+	var tmp3 = "CEM";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = ' ';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "ICE";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "LNF";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "chgpwd";
+	var tmp2 = " ";
+	var tmp3 = "CPW";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'chgpwd';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "MMG";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "MMR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "MMC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "RDC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "RIC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = " ";
+	var tmp2 = " ";
+	var tmp3 = "FFF";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = ' ';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = " ";
+	var tmp2 = " ";
+	var tmp3 = "MBP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = ' ';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = " ";
+	var tmp2 = " ";
+	var tmp3 = "MTN";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = ' ';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = " ";
+	var tmp2 = " ";
+	var tmp3 = "TBI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = ' ';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "";
+	var tmp2 = "";
+	var tmp3 = "OLR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+	//}
+
+
+	var tmp1 = "chgaddr";
+	var tmp2 = " ";
+	var tmp3 = "CAD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'chgaddr';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "emailsupp";
+	var tmp2 = "";
+	var tmp3 = "SSE";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'emailsupp';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = " ";
+	var tmp2 = " ";
+	var tmp3 = "ALD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = ' ';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = " ";
+	var tmp2 = " ";
+	var tmp3 = "ALM";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = ' ';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "alert";
+	var tmp2 = " ";
+	var tmp3 = "ALT";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'alert';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = "";
+	var tmp3 = "ACI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "ACS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "CAC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "CDC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = "";
+	var tmp3 = "APR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = "";
+	var tmp3 = "APD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = "";
+	var tmp3 = "PCR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "UNB";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "VST";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "";
+	var tmp2 = "";
+	var tmp3 = "CSL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+	//}
+
+
+	var tmp1 = "fcatis";
+	var tmp2 = "";
+	var tmp3 = "IPB";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'fcatis';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "fcatis";
+	var tmp2 = " ";
+	var tmp3 = "OST";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'fcatis';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "fcatis";
+	var tmp2 = " ";
+	var tmp3 = "TXA";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'fcatis';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "fcatis";
+	var tmp2 = "";
+	var tmp3 = "VPR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'fcatis';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = " ";
+	var tmp2 = " ";
+	var tmp3 = "ASH";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = ' ';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "mobilebkg";
+	var tmp2 = " ";
+	var tmp3 = "MOA";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'mobilebkg';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "mobilebkg";
+	var tmp2 = " ";
+	var tmp3 = "MOD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'mobilebkg';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = " ";
+	var tmp2 = " ";
+	var tmp3 = "RGN";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = ' ';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "dtcard";
+	var tmp2 = "";
+	var tmp3 = "DCE";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'dtcard';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "dtcard";
+	var tmp2 = "";
+	var tmp3 = "DCL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'dtcard';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "dtcard";
+	var tmp2 = "";
+	var tmp3 = "DPI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'dtcard';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "fcatis";
+	var tmp2 = "";
+	var tmp3 = "OBU";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'fcatis';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "fcatis";
+	var tmp2 = "";
+	var tmp3 = "ORE";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'fcatis';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "fcatis";
+	var tmp2 = " ";
+	var tmp3 = "OSW";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'fcatis';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "fcatis";
+	var tmp2 = "";
+	var tmp3 = "SIP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'fcatis';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "fcatis";
+	var tmp2 = "";
+	var tmp3 = "SWP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'fcatis';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "fcatis";
+	var tmp2 = " ";
+	var tmp3 = "STP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'fcatis';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "fcatis";
+	var tmp2 = " ";
+	var tmp3 = "SRP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'fcatis';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "transfer";
+	var tmp2 = "";
+	var tmp3 = "CPS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'transfer';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "transfer";
+	var tmp2 = "";
+	var tmp3 = "CPQ";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'transfer';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "RSP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = "";
+	var tmp3 = "LSM";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = "";
+	var tmp3 = "LTH";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "RRP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "DSR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "LDT";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "IRC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = "";
+	var tmp3 = "LPD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = "";
+	var tmp3 = "LPI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = "";
+	var tmp3 = "LQF";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = "";
+	var tmp3 = "LRP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = "";
+	var tmp3 = "LWL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = "";
+	var tmp3 = "LAD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = "";
+	var tmp3 = "LNR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "LDL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "mailbox";
+	var tmp2 = "";
+	var tmp3 = "MBC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'mailbox';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "mailbox";
+	var tmp2 = "";
+	var tmp3 = "MBI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'mailbox';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "mailbox";
+	var tmp2 = "";
+	var tmp3 = "MBS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'mailbox';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "mailbox";
+	var tmp2 = "";
+	var tmp3 = "MBD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'mailbox';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "mobilereg";
+	var tmp2 = " ";
+	var tmp3 = "MBR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'mobilereg';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "chgaddr";
+	var tmp2 = " ";
+	var tmp3 = "CAM";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'chgaddr';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "COC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "CHL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "dtcard";
+	var tmp2 = "";
+	var tmp3 = "DCB";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'dtcard';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "dtcard";
+	var tmp2 = "";
+	var tmp3 = "DCU";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'dtcard';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "bills";
+	var tmp2 = "";
+	var tmp3 = "UPP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'bills';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "DAE";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "TCR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "PLC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "offer";
+	var tmp2 = " ";
+	var tmp3 = "OFR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'offer';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "UNM";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "CFI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "RBC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "";
+	var tmp2 = "";
+	var tmp3 = "DNR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+	//}
+
+
+	var tmp1 = "ppcard";
+	var tmp2 = "";
+	var tmp3 = "RFX";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'ppcard';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "chgaddr";
+	var tmp2 = "";
+	var tmp3 = "CHA";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'chgaddr';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "BTE";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "dtcard";
+	var tmp2 = "";
+	var tmp3 = "DRH";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'dtcard';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "dtcard";
+	var tmp2 = "";
+	var tmp3 = "DCA";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'dtcard';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = "";
+	var tmp3 = "CPP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "DTA";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = "";
+	var tmp3 = "PSS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "UTD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "CRI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "AOC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "LYB";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "LIT";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "LDR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "LGV";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "LDC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "LIV";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = "";
+	var tmp3 = "UCD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "LPU";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "insurance";
+	var tmp2 = " ";
+	var tmp3 = "BRP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'insurance';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "dtcard";
+	var tmp2 = "";
+	var tmp3 = "DPR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'dtcard';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "insurance";
+	var tmp2 = " ";
+	var tmp3 = "VEP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'insurance';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "insurance";
+	var tmp2 = " ";
+	var tmp3 = "RPL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'insurance';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "insurance";
+	var tmp2 = " ";
+	var tmp3 = "LFI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'insurance';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "FRD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "TPG";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "GAS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "RWL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "PPY";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "LOH";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "RAL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "TCS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "smartbuyreg";
+	var tmp2 = "";
+	var tmp3 = "SBY";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'smartbuyreg';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "insurance";
+	var tmp2 = " ";
+	var tmp3 = "ADH";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'insurance';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "ZAP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "insurance";
+	var tmp2 = " ";
+	var tmp3 = "ADL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'insurance';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "insurance";
+	var tmp2 = " ";
+	var tmp3 = "TAT";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'insurance';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "DMF";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "insurance";
+	var tmp2 = " ";
+	var tmp3 = "BHA";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'insurance';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "LUV";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "LCN";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "LFO";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = " ";
+	var tmp3 = "POD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "";
+	var tmp2 = "";
+	var tmp3 = "LFU";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "DDS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "insurance";
+	var tmp2 = " ";
+	var tmp3 = "MHI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'insurance';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "insurance";
+	var tmp2 = " ";
+	var tmp3 = "BAI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'insurance';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "ABA";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "RSS";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "persuser";
+	var tmp2 = " ";
+	var tmp3 = "PUI";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'persuser';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "IPO";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = " ";
+	var tmp3 = "SCL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = 'true';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "dtcard";
+	var tmp2 = "";
+	var tmp3 = "SDL";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = 'true';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'dtcard';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "fcatis";
+	var tmp2 = " ";
+	var tmp3 = "ISA";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'fcatis';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "chgaddr";
+	var tmp2 = "";
+	var tmp3 = "TSC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'chgaddr';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "ITF";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "loans";
+	var tmp2 = "";
+	var tmp3 = "PDC";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'loans';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = " ";
+	var tmp3 = "FIR";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "RBD";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "cards";
+	var tmp2 = "";
+	var tmp3 = "SPN";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'cards';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "accounts";
+	var tmp2 = "";
+	var tmp3 = "PSP";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'accounts';
+
+		l_token3 = '';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = "transfer";
+	var tmp2 = "TPE";
+	var tmp3 = "TPE";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = 'transfer';
+
+		l_token3 = 'TPE';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+	var tmp1 = " ";
+	var tmp2 = " ";
+	var tmp3 = "LGF";
+
+	//alert('l_token2='+tmp1+', l_token3='+tmp3);
+	
+	//if(tmp3 != 'CEM' && tmp3 != 'FFF' && tmp3 != 'MBP'&& tmp3 != 'MTN'&& tmp3 != 'OLR'&& tmp3 != 'TBI'&& tmp3 != 'ALD'&& tmp3 != 'ALM'&& tmp3 != 'ASH'&& tmp3 != 'RGN'&& tmp3 != 'CPS'&& tmp3 != 'CPQ'&& tmp3 != 'HLD'&& tmp3 != 'DPT'&& tmp3 != 'MPE'){
+	l_flashtxn = '';/* Retail-NewBubbleImg-22/02/2012-AnandraoH */
+	
+
+		l_token2 = ' ';
+
+		l_token3 = ' ';
+		
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+		l_flashtab = '';
+		/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+		
+		setFlag(l_token2);
+
+	
+	//}
+
+
+
+//-------------------------------------------------------------------------------
+
+function setFlag(p_mnem){
+
+	//alert('p_mnem='+p_mnem+', l_token2='+l_token2+', l_token3='+l_token3);
+	if(l_token2==ACCOUNT_MNEMONIC){
+
+		bAcctFlag = true;
+
+	}else if(l_token2==TPT_MNEMONIC && l_token3 == 'TPT'  || l_token3=='TPE' ){    //irshad
+
+		bTransferFlag = true;
+
+	}else if(l_token2==DEMAT_MNEMONIC){
+
+		bDematFlag = true;
+
+	}else if(l_token2==BROKER_MNEMONIC){
+
+		bDepositoryFlag = true;
+
+	}else if(l_token2==MERCH_MNEMONIC){
+
+		bMerchantFlag = true;
+
+	}else if(l_token2==CARD_MNEMONIC){
+
+		bCreditCardFlag = true;
+
+	}else if(l_token2==BILL_MNEMONIC){
+
+		bBillsFlag = true;
+
+	}else if(l_token2==ALERT_MNEMONIC){
+
+		bAlertFlag = true;
+
+	}else if(l_token2==MOBBKG_MNEMONIC){
+
+		bMobFlag = true;
+
+	}else if(l_token2==REG_MNEMONIC){
+
+		bOnlineRegFlag = true;
+
+	}else if(l_token2==ADDR_MNEMONIC){
+
+		bProfileFlag = true;
+
+	}else if(l_token2==PWD_MNEMONIC){
+
+		bChgPwdFlag = true;
+
+	}else if(l_token2==EMAIL_MNEMONIC){
+
+		bEmailFlag = true;
+
+	}else if(l_token2==INV_MNEMONIC){
+
+		bInvFlag  = true;	
+
+	}else if(l_token2==DCARD_MNEMONIC){
+
+		bDebitCardFlag = true;
+
+	}else if(l_token2==LOAN_MNEMONIC){
+
+		bLoanFlag  = true;	
+
+	}
+	else if(l_token2==MOBREG_MNEMONIC){
+		bMobileRegFlag = true;
+	}
+	/* Smartbuy_within_Netbanking-13/09/2013-Naeem M. Sayyed-START */
+	else if(l_token2==OFFER_MNEMONIC){				
+		bOfferFlag = true;
+	}	
+	/* Smartbuy_within_Netbanking-13/09/2013-Naeem M. Sayyed-END */			
+	/* NetBanking UI Revamp-13/08/2014-Sandeep Saxena-ADDED-Start */
+	else if(l_token2==INSURANCE_MNEMONIC){				
+		bInsurFlag = true;
+	}	
+	/* NetBanking UI Revamp-13/08/2014-Sandeep Saxena-ADDED-End */				
+     /* 06-june-2016 Pratik Kashid FS_CCR_0498_Personalization of user id -start */
+	 else if(l_token2==PUSERID_MNEMONIC){				
+		bPersuserFlag = true;
+	}	
+     /* 06-june-2016 Pratik Kashid FS_CCR_0498_Personalization of user id -end */	
+				
+	/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+
+	/*   Upwan for FS_462_socialbanking on 3/7/2015 start */ 
+	else  if(l_token2==SOCIALBANKING_MNEMONIC){
+	     bSocialBankingFlag = true;
+	}
+	/*    Upwan for FS_462_socialbanking on 3/7/2015 End*/
+
+	/*   Mustakim For FS_502_smartbuy on 3/7/2015 start */ 
+	else  if(l_token2==SMARTBUY_MNEMONIC){
+	     bSmartBuyFlag = true;
+	}
+	/*    Mustakim For FS_502_smartbuy on 3/7/2015 End*/
+
+	if (l_flashtab == "RS" + ACCOUNT_MNEMONIC ) {
+
+		bFlashAcctFlag = true;
+	
+	} else if ( l_flashtab == "RS" + TPT_MNEMONIC ){
+	
+		bFlashTransferFlag = true;
+
+	} else if ( l_flashtab == "RS" + DEMAT_MNEMONIC ) {
+	
+		bFlashDematFlag = true;
+	
+	} else if ( l_flashtab == "RS" + BROKER_MNEMONIC ) {
+
+		bFlashDepositoryFlag = true;
+	
+	} else if ( l_flashtab == "RS" + MERCH_MNEMONIC ) {
+
+		bFlashMerchantFlag = true;
+	
+	} else if ( l_flashtab == "RS" + CARD_MNEMONIC ) {
+
+		bFlashCreditCardFlag = true;
+	
+	} else if ( l_flashtab == "RS" + BILL_MNEMONIC ) {
+
+		bFlashBillsFlag = true;
+
+	 } else if ( l_flashtab == "RS" + ALERT_MNEMONIC ) {
+
+		bFlashAlertFlag = true;
+	
+	} else if ( l_flashtab == "RS" + MOBBKG_MNEMONIC ) {
+
+		bFlashMobFlag = true;
+	
+	} else if ( l_flashtab == "RS" + REG_MNEMONIC ) {
+
+		bFlashOnlineRegFlag = true;
+	
+	} else if ( l_flashtab == "RS" + ADDR_MNEMONIC ) {
+
+		bFlashProfileFlag = true;
+	
+	} else if ( (l_flashtab == "RS" + PWD_MNEMONIC) ) {
+
+		bFlashChgPwdFlag = true;
+	
+	} else if ( l_flashtab == "RS" + EMAIL_MNEMONIC ) {
+
+		bFlashEmailFlag = true;
+	
+	} else if ( l_flashtab == "RS" + INV_MNEMONIC ) {
+
+		bFlashInvFlag  = true;	
+	
+	} else if ( l_flashtab == "RS" + DCARD_MNEMONIC ) {
+
+		bFlashDebitCardFlag = true;
+	 
+	 } else if ( l_flashtab == "RS" + LOAN_MNEMONIC ) {
+
+		bFlashLoanFlag  = true;	
+	
+	}  else if ( l_flashtab == "RS" + MOBREG_MNEMONIC ) {
+
+		bFlashMobileRegFlag = true;
+	
+	}  else if(l_token2 == PWD_MNEMONIC && l_flashtxn == "true") {
+
+		bFlashChgPwdFlag = true;
+	
+	} else if(l_token2 == ADDR_MNEMONIC && l_flashtxn == "true") {
+	
+		bFlashProfileFlag = true;
+
+	} else if ( l_flashtab == "RS" + OFFER_MNEMONIC ) {
+		bFlashOfferFlag  = true;		
+	}
+	/* NetBanking UI Revamp-13/08/2014-Sandeep Saxena-ADDED-Start */
+	else if ( l_flashtab == "RS" + INSURANCE_MNEMONIC ) {
+		bFlashInsurerFlag  = true;		
+	}
+	/* NetBanking UI Revamp-13/08/2014-Sandeep Saxena-ADDED-End */
+
+	 /* 06-june-2016 Pratik Kashid FS_CCR_0498_Personalization of user id -start */
+        else  if(l_token2 ==  PUSERID_MNEMONIC && l_flashtxn == "true"){  /*  Mehul Shah SFR changes*/
+		bFlashPersuserFlag  = true;		
+	}
+	 /* 06-june-2016 Pratik Kashid FS_CCR_0498_Personalization of user id -end */
+/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+
+
+  /*    Upwan for FS_462_socialbanking on 3/7/2015 start */   
+	
+	else  if(l_token2 ==  SOCIALBANKING_MNEMONIC && l_flashtxn == "true"){
+	      bFlashSocialBankingRegFlag  = true;
+	} 
+	
+	/*    Upwan for FS_462_socialbanking on 3/7/2015 End*/ 
+  /*    Mustakim For FS_502_smartbuy on 3/7/2015 start */   
+	
+	else  if(l_token2 ==  SMARTBUY_MNEMONIC && l_flashtxn == "true"){
+	      bFlashSmartBuyRegFlag  = true;
+	} 
+	
+	/*    Mustakim For FS_502_smartbuy on 3/7/2015 start End*/ 
+	
+
+}
+
+//-------------------------------------------------------------------------------
+
+function Logout () {
+
+	/* start, changes done for billpay redirect issue */
+	var l_txnreq = '';
+	var l_txnid  = '';
+
+	try {
+		l_txnreq = parent.txnReq;
+		l_txnid  = parent.frames["left_menu"].sel_txnid;
+	} catch (e) {
+		l_txnid  = '-';
+		l_txnreq = '-';
+	}
+
+	if(!l_clicked && !(l_txnreq == BILL_MNEMONIC && l_txnid == 'LGF')){
+
+	//if(!l_clicked){
+
+	/* end, changes done for billpay redirect issue */
+
+		l_clicked = true;
+		/* ADD-08/09/2014-Contact Details Updation-ShahzadD - START*/
+		if(contactChildWindow != null && contactChildWindow != ""){
+			contactChildWindow.close();
+		}
+		/* ADD-08/09/2014-Contact Details Updation-ShahzadD - END*/
+
+		document.frmpost.fldTxnId.value='LGF';
+
+		//document.frmpost.fldTxnId.value='EXB';
+
+		document.frmpost.fldScrnSeqNbr.value='01';
+
+		document.frmpost.target="_parent";
+
+		document.frmpost.submit();
+
+		document.frmpost.reset();
+
+	}
+
+    return false;
+
+}
+
+//-------------------------------------------------------------------------------
+
+function del_cookie(c_name) {
+    document.cookie = c_name + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+}
+
+//-------------------------------------------------------------------------------
+
+function fireApp (
+
+	p_txn_id
+
+,	p_seq_no
+
+,	p_txn_req
+
+) {
+
+
+if ((l_txn_req == p_txn_req) || (l_fireAppClicked))
+
+
+	return false;
+
+
+
+parent.txnReq = p_txn_req;
+
+
+
+if( p_txn_req == PWD_MNEMONIC || l_txn_req == PWD_MNEMONIC){
+
+//for common menu
+	
+	del_cookie('hdfcnetbank');
+
+	document.frmMenu.fldTxnId.value = "MNU";
+
+	document.frmMenu.fldScrnSeqNbr.value="01";
+
+	document.frmMenu.fldTxnRequest.value=p_txn_req;
+
+	document.frmMenu.target = "common_menu1";
+
+	document.frmMenu.submit ();
+
+}
+
+else {
+
+	 
+	selectTab(p_txn_req);
+
+}
+
+
+
+//for left menu
+
+ 
+	document.frmpost.fldTxnId.value=p_txn_id;
+
+	document.frmpost.fldScrnSeqNbr.value=p_seq_no;
+
+	document.frmpost.target = "left_menu";
+
+	
+	document.frmpost.submit();
+
+
+
+	parent.frames["main_part"].location.href="dummy.html";
+
+	l_fireAppClicked = true;
+
+	return false;
+
+}
+
+//------------------------------------------------------------------------------
+
+function selectTab(p_txn_req){
+
+	l_txn_req = p_txn_req;
+
+	if(bAcctFlag) document.frmpost.img_acct.src = "/default/gif/n_account.gif";
+
+	if(bTransferFlag) document.frmpost.img_tpt.src = "/default/gif/n_fund.gif";
+
+	if(bBillsFlag) document.frmpost.img_bill.src = "/default/gif/n_bill.gif";
+
+	if(bCreditCardFlag) document.frmpost.img_ccp.src = "/default/gif/n_cards.gif";	//sandeep ui revamp
+
+	if(bMerchantFlag) document.frmpost.img_merch.src = "/default/gif/n_merch.gif";
+
+	if(bDepositoryFlag) document.frmpost.img_brk.src = "/default/gif/n_broker.gif";
+
+	if(bDematFlag) document.frmpost.img_demat.src = "/default/gif/n_demat.gif";
+
+	if(bInvFlag) document.frmpost.img_inv.src = "/default/gif/n_mutual_fund.gif";
+
+	//if(bDebitCardFlag) document.frmpost.img_dcp.src = "/default/gif/n_debit.gif";
+
+	if(bLoanFlag) document.frmpost.img_loan.src = "/default/gif/n_loan.gif";
+
+	if(bOfferFlag) document.frmpost.img_offer.src = "/default/gif/n_offers.gif";
+
+	if(bInsurFlag) document.frmpost.img_insur.src = "/default/gif/n_insurance.gif";			/* NetBanking UI Revamp-13/08/2014-Sandeep Saxena-ADDED */
+
+	switch(p_txn_req){
+
+		case DEMAT_MNEMONIC : 
+
+			document.frmpost.img_demat.src = "/default/gif/s_demat.gif";
+
+			break;
+
+		case TPT_MNEMONIC:
+
+			document.frmpost.img_tpt.src = "/default/gif/s_fund.gif";
+
+			break;
+
+		case BILL_MNEMONIC:
+
+			document.frmpost.img_bill.src = "/default/gif/s_bill.gif";
+
+			break;
+
+		case CARD_MNEMONIC:
+
+			document.frmpost.img_ccp.src = "/default/gif/s_cards.gif"; //sandeep ui revamp
+
+			break;
+
+		case BROKER_MNEMONIC:
+
+			document.frmpost.img_brk.src = "/default/gif/s_broker.gif";
+
+			break;
+
+		case MERCH_MNEMONIC:
+
+			document.frmpost.img_merch.src = "/default/gif/s_merch.gif";
+
+			break;
+
+		case ACCOUNT_MNEMONIC:
+
+			document.frmpost.img_acct.src = "/default/gif/s_account.gif";
+
+			break;
+
+		case INV_MNEMONIC:
+
+			document.frmpost.img_inv.src = "/default/gif/s_mutual_fund.gif";
+
+			break;
+
+		case DCARD_MNEMONIC:
+
+			document.frmpost.img_dcp.src = "/default/gif/s_debit.gif";
+
+			break;
+
+		default: 
+
+			break;
+
+		case LOAN_MNEMONIC:
+
+			document.frmpost.img_loan.src = "/default/gif/s_loan.gif";
+
+			break;
+
+		case OFFER_MNEMONIC:
+			document.frmpost.img_offer.src = "/default/gif/s_offers.gif";
+			break;				
+	/* NetBanking UI Revamp-13/08/2014-Sandeep Saxena-ADDED-Start */		
+		case INSURANCE_MNEMONIC:
+			document.frmpost.img_insur.src = "/default/gif/s_insurance.gif";
+			break;				
+	/* NetBanking UI Revamp-13/08/2014-Sandeep Saxena-ADDED-End */
+		
+
+	}
+
+return false;
+
+}
+
+//--------------------------------------------------------------------------------
+
+function contexthelppop()
+
+{
+	/* MOD-TAT-TXT-CHNG-2-24/01/2013-PankilP-START */
+	/*window.open("http://www.hdfcbank.com/common/onlineservices/manual/index.html","newWin","toolbar=no,location=no,scrollbars=yes,width=790,height=500");*/
+	window.open("http://www.hdfcbank.com/personal/ways_to_bank/ways-to-bank-details/netbanking/gts8mitq","newWin","toolbar=no,location=no,scrollbars=yes,width=790,height=500");
+	/* MOD-TAT-TXT-CHNG-2-24/01/2013-PankilP-END */
+}
+
+//--------------------------------------------------------------------------------
+
+function getCookie(c_name)
+{
+	var i,x,y;
+	var ARRcookies = new Array();
+	ARRcookies = document.cookie.split(";");
+	for (i=0;i<ARRcookies.length;i++)
+	{
+		x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+		y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+		x=x.replace(/^\s+|\s+$/g,"");
+		if (x==c_name)
+		{
+			return unescape(y);
+		}
+	}
+}
+
+
+function validateCookie(c_name,c_value)
+{
+	if(getCookie(c_name) ==c_value){
+		l_clicked = false;
+		Logout();
+		return true; 
+	}else{
+		document.cookie=c_name + "=" + c_value;
+	}
+}
+
+
+
+
+</script>
+</head>
+<body onload="validateCookie(&#39;hdfcnetbank&#39;,&#39;y&#39;);" marginwidth="0" marginheight="0">
+<form class="widthTopMenu" target="_parent" action="https://netbanking.hdfcbank.com/netbanking/entry" method="post" name="frmpost">
+<input value="RS" name="fldAppId" type="hidden"><input value="" name="fldTxnId" type="hidden"><input value="" name="fldScrnSeqNbr" type="hidden"><input value="" name="fldTxnVal" type="hidden"><input value="CH" name="fldModule" type="hidden"><input value="426385838WREMJATJO" name="fldSessionId" type="hidden"><input value="426385838WREMJATJO101534673KY" name="fldRequestId" type="hidden"><input value="" name="fldTxnRequest" type="hidden">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tbody><tr align="left">
+<td valign="top" width="227"><script language="javascript">
+
+		if(l_txn_req !=PWD_MNEMONIC) {
+		
+			document.write('<img src="/default/gif/logo.gif" name="img_logo" height="121" width="208" alt="HDFC Bank NetBanking"/>');
+		}else{
+			document.write('<img src="/default/gif/logo.gif" alt="HDFC Bank NetBanking" height="121" width="208"/>');
+		}
+	</script><img src="./logo.gif" name="img_logo" height="121" width="208" alt="HDFC Bank NetBanking"></td><td valign="top" width="775">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tbody><tr valign="top" align="left">
+<td><script language="javascript">
+
+						if(l_txn_req !=PWD_MNEMONIC) {
+
+							document.write('<table border="0" cellspacing="0" cellpadding="0">');
+
+						}else{
+
+							document.write('<table border="0" cellspacing="0" cellpadding="0" background="/default/gif/small-bg1.gif">');
+
+						}
+
+					</script><table border="0" cellspacing="0" cellpadding="0">
+<tbody><tr height="63">
+<td valign="top" width="285">
+<p class="loginLink">
+<b>WELCOME,</b><b>&nbsp;<script language="Javascript">document.write(parent.l_custname)</script>SUPREETH S</b>
+<br>
+<span><script language="javascript">
+									
+			 				//	document.write (l_display_curr_lgn);
+
+			 				</script></span>
+							Last Log in:
+
+			 				<script language="javascript">
+
+			 					document.write (displayDate);
+
+			 				</script>Sep 07 2021 7:19 P.M. IST</p>
+</td><td width="10" valign="top" align="right"></td><td width="470" valign="top" align="left">
+<p class="sNav">
+<script language="javascript">
+
+								if(l_txn_req !=PWD_MNEMONIC) {
+									
+								/*   Upwan for FS_462_socialbanking on 3/7/2015 start */ 
+								
+									if(bSocialBankingFlag){ 
+
+										document.write('<a href="javascript:void(0)" style="margin-left:1px;" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'54\', SOCIALBANKING_MNEMONIC)" target="_top" title="Social Banking Registration">');										
+										document.write("Social Media Banking");
+										
+									 	if(bFlashSocialBankingRegFlag) { 
+											document.write ('<img border="0" alt="New" height="13" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+									}   
+										
+										document.write(' ');
+										document.write('</a>');
+										//document.write('|');
+										document.write(' ');
+							 	}   
+									
+									
+									
+									
+								 /*   Upwan for FS_462_socialbanking on 3/7/2015 End */	
+								
+								/*   Mustakim For FS_502_smartbuy on 3/7/2015 start */ 
+								
+									if(bSmartBuyFlag){ 
+
+										document.write('<a href="javascript:void(0)" style="margin-left:1px;" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'49\', SMARTBUY_MNEMONIC)" target="_top" title="Smart Buy">');										
+										document.write('SmartBuy');
+										
+									 	if(bFlashSmartBuyRegFlag) { 
+											document.write ('<img border="0" alt="New" height="13" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+									}   
+										
+										document.write(' ');
+										document.write('</a>');
+										//document.write('|');
+										document.write(' ');
+							 	}   
+									
+									
+									
+									
+								 /*   Mustakim For FS_502_smartbuy on 3/7/2015 start End */ 
+
+/*06-june-2016 Pratik Kashid FS_CCR_0498_Personalization of userid  start	*/
+								
+											
+									   
+									 if(bPersuserFlag){
+										document.write('<a href="javascript:void(0)" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'90\', PUSERID_MNEMONIC)" target="_top" title="Personalize User ID ">');										
+										document.write('Personalize User ID');
+										if(bFlashPersuserFlag) {
+											document.write ('<img border="0" alt="New" height="13" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+										}
+										document.write(' ');
+										document.write('</a>');
+										document.write(' ');
+										}
+										//06-june-2016 Pratik Kashid FS_CCR_0498_Personalization of user id  end
+									
+											
+									if(bAlertFlag){
+
+										document.write('<a href="javascript:void(0)" style="margin-left:1px;" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'08\', ALERT_MNEMONIC);" target="_top" title="Insta Alerts">');	/* Mustakim For FS_502_smartbuy on 3/7/2015 start */					
+
+									//	document.write('<img src="./gif/alert.gif" alt="Insta Alerts" border="0"/>');
+										document.write('Insta Alerts');
+										/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+										if(bFlashAlertFlag) {
+											document.write ('<img border="0" alt="New" height="13" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+										}
+										/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+										document.write(' ');
+										document.write('</a>');
+										//document.write('|');
+										document.write(' ');
+
+									}
+
+                                    if(bMobFlag){
+
+										document.write('<a href="javascript:void(0)" style="margin-left:1px;"  onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'14\', MOBBKG_MNEMONIC);" target="_top" title="SMS Banking Registration">');	/* Mustakim For FS_502_smartbuy on 3/7/2015 start */					
+
+									//	document.write('<img src="./gif/mobilereg.gif" alt="SMS Banking Registration" border="0"/>');
+										document.write('SMS Banking Registration');
+										/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+										if(bFlashMobFlag) {
+											document.write ('<img border="0" alt="New" height="13" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+										}
+										/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+										document.write(' ');
+										document.write('</a>');
+										//document.write('|');
+										document.write(' ');
+									}
+
+									if(bEmailFlag){
+
+										document.write('<a href="javascript:void(0)" style="margin-left:1px;"  onclick="l_fireAppClicked = false; return  fireApp (\'MNU\', \'98\', EMAIL_MNEMONIC)" target="_top" title="Contact Us">');	 /* Mustakim For FS_502_smartbuy on 3/7/2015 start */
+
+									//	document.write('<img src="./gif/contact.gif" alt="Contact Us" height="25" border="0"/>');
+										document.write('Contact Us');
+										/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+										if(bFlashEmailFlag) {
+											document.write ('<img border="0" alt="New" height="13" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+										}
+										/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+										document.write(' ');
+										document.write('</a>');
+										//document.write('|');
+										document.write(' ');
+
+									}
+
+									if(bOnlineRegFlag){
+
+										document.write('<a href="javascript:void(0)"  style="margin-left:1px;" onclick="return false;" target="_top" title="Online Registration">');	/* Mustakim For FS_502_smartbuy on 3/7/2015 start */
+
+										document.write('<img src="default/gif/apply.gif" alt="Online Registration" height="25" border="0"/>');
+
+										document.write('</a>');
+
+									}
+
+		
+							//Help link removed 		Gaurav 		20 Feb 2014-
+							//		document.write('<a href="javascript:void(0)" onclick="return contexthelppop();" //target="_top" title="Help">');
+
+								//	document.write('<img src="./gif/help.gif" alt="Help" border="0"/>');
+							//		document.write('Help');
+							//		document.write('</a>');
+
+								} else {
+
+								//	document.write('<img name="rgt_img" src="default/gif/small-right.gif" height="90" usemap="#Map2Map" border="0"/>');
+							
+								bChgPwdFlag=false;
+								bProfileFlag=false;
+
+								document.write('<a href="javascript:void(0)" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'41\', ACCOUNT_MNEMONIC)" target="_top" title="Change Password">');
+							    document.write("<< Return to Net Banking Main Menu");
+										
+								}
+								</script><a href="javascript:void(0)" style="margin-left:1px;" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;49&#39;, SMARTBUY_MNEMONIC)" target="_top" title="Smart Buy">SmartBuy </a> <a href="javascript:void(0)" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;90&#39;, PUSERID_MNEMONIC)" target="_top" title="Personalize User ID ">Personalize User ID </a> <a href="javascript:void(0)" style="margin-left:1px;" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;08&#39;, ALERT_MNEMONIC);" target="_top" title="Insta Alerts">Insta Alerts </a> <a href="javascript:void(0)" style="margin-left:1px;" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;14&#39;, MOBBKG_MNEMONIC);" target="_top" title="SMS Banking Registration">SMS Banking Registration </a> <a href="javascript:void(0)" style="margin-left:1px;" onclick="l_fireAppClicked = false; return  fireApp (&#39;MNU&#39;, &#39;98&#39;, EMAIL_MNEMONIC)" target="_top" title="Contact Us">Contact Us </a> 
+</p>
+<p class="sNav tNav">
+<script language="javascript">
+								if(bChgPwdFlag){
+
+										document.write('<a href="javascript:void(0)" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'97\', PWD_MNEMONIC)" target="_top" title="Change Password">');
+
+							//			document.write('<img src="./gif/chgpwd.gif"  alt="Change Password" border="0"/>');
+										
+									    document.write("Change Password");
+										/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+										if(bFlashChgPwdFlag) {
+											document.write ('<img border="0" alt="New" height="13" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+										}
+										/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+										document.write(' ');
+										document.write('</a>');
+										//document.write('|');
+										document.write('\xa0\xa0\xa0');
+
+									} else{
+
+								//		document.write('<img src="./gif/transparent.gif" alt="" width="80" height="25" border="0"/>');
+
+									}
+
+									if(bProfileFlag){
+
+										document.write('<a href="javascript:void(0)" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'96\', ADDR_MNEMONIC)" target="_top" title="Contact Details">'); /* ILEXT-MOD-22/11/2011-IrshadP */
+
+								//		document.write('<img src="./gif/chgprofile.gif"  alt="My Contact Details" border="0"/>');
+									document.write("Profile Details\xa0\xa0\xa0");    /* ILEXT-MOD-22/11/2011-IrshadP */  /* IL-ADD-15/05/2012-Contact Details Updation-ShahzadD*/ /* Mansi : FLEXENH-417 - adding space - RD Point 3 */
+										/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */ //Sagar Gupta - 25/02/2021 - FLEXENH-699 - Consent to allow transactions differential treatment for Senior Citizens
+
+										if(bFlashProfileFlag) {
+											document.write ('<img border="0" alt="New" height="13" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+										}
+										/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+										document.write(' ');
+										document.write('</a>');
+										document.write(' ');
+
+									} else {
+
+								//		document.write('<img src="./gif/transparent.gif" alt="" width="40" height="25" border="0"/>');
+
+									}
+
+									//document.write('<img src="default/gif/transparent.gif" width="24" height="25" border="0"/>');
+
+									document.write('<a href="javascript:void(0)" onclick="return Logout();" target="_top" title="Log Out">');
+
+									document.write('<img src="default/gif/logoutbtn.gif" alt="Log Out" width="68" height="25" align="top" border="0"/>');
+
+									document.write('</a>');
+
+								//	document.write('<img src="default/gif/transparent.gif" width="31" height="25" border="0"/>');
+
+
+						
+									//document.write('<br/>');
+									</script><a href="javascript:void(0)" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;97&#39;, PWD_MNEMONIC)" target="_top" title="Change Password">Change Password </a>&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;96&#39;, ADDR_MNEMONIC)" target="_top" title="Contact Details">Profile Details&nbsp;&nbsp;&nbsp; </a> <a href="javascript:void(0)" onclick="return Logout();" target="_top" title="Log Out"><img src="./logoutbtn.gif" alt="Log Out" width="68" height="25" align="top" border="0"></a>
+</p>
+</td>
+</tr>
+<script language="javascript">
+
+				document.write('</table>');
+
+				</script></tbody></table></td>
+</tr>
+<tr>
+<td class="tabs" id="nav"><script language="javascript">
+					
+					if(l_txn_req != PWD_MNEMONIC){
+
+						if(bAcctFlag){
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+							if(bFlashAcctFlag) {
+								document.write('<div style="float: left; ">');
+								document.write('<a title="Accounts" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'41\', ACCOUNT_MNEMONIC);" href="javascript:void(0)">');
+
+								document.write ('<img border="0" alt="Accounts" height="42" width="80" name="img_acct" src="default/gif/n_account.gif">');
+
+								document.write('</a>');
+								document.write('<span style="font-size: 90%;color:red;margin-left: -30px;margin-top: 0px;padding: 0px 0px;float: left;" title="New">');
+								document.write ('<img border="0" alt="New" height="12" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+								document.write('</span>');
+								document.write('</div>');
+							}  else {
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+							document.write('<a title="Accounts" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'41\', ACCOUNT_MNEMONIC);" href="javascript:void(0)">');
+
+							document.write ('<img border="0" alt="Accounts" height="42" width="80" name="img_acct" src="default/gif/n_account.gif">');
+
+							document.write('</a>');
+							}
+						}else{
+						
+						document.write('<a title="Accounts" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'41\', ACCOUNT_MNEMONIC);" href="javascript:void(0)">');
+
+							document.write ('<img border="0" alt="Accounts" height="42" width="80" name="img_acct" src="default/gif/n_account.gif">');
+
+							document.write('</a>');
+
+						}
+						if(bTransferFlag){
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+							if(bFlashTransferFlag) {
+								document.write('<div style="float: left;">');
+
+							        document.write('<a title="Fund Transfer" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'42\',TPT_MNEMONIC);" href="javascript:void(0)">');
+
+							        document.write ('<img border="0" height="42" width="106" name="img_tpt" alt="Funds Transfer" src="default/gif/n_fund.gif">');
+
+							        document.write('</a>');
+
+								document.write('<span style="font-size: 90%;color:red;margin-left: -30px;margin-top: -0px;padding: 0px 0px;float: left;" title="New">');
+								document.write ('<img border="0" alt="New" height="12" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+								document.write('</span>');
+								document.write('</div>');
+							} else {
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+								document.write('<a title="Funds Transfer" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'42\',TPT_MNEMONIC);" href="javascript:void(0)">');
+
+								document.write ('<img border="0" height="42" width="106" name="img_tpt" alt="Funds Transfer" src="default/gif/n_fund.gif">');
+
+								document.write('</a>');
+							}
+
+						}else{
+
+							document.write ('<img border="0" height="42" width="121" alt="Funds Transfer" src="default/gif/n_fund.gif">');
+
+						}
+
+
+
+						if(bBillsFlag){
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+							if(bFlashBillsFlag) {
+							
+								document.write('<div style="float: left;">');
+								document.write('<a title="BillPay &amp; Recharge" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'43\',BILL_MNEMONIC);" href="javascript:void(0)">');
+
+								/*Bill Payment Image Size Changed - 24/07/2013- ShahzadD*/
+								
+								/* Modified width from 116 to 80*/
+								        document.write ('<img border="0" height="42" width="137" name="img_bill" alt="BillPay &amp; Recharge" src="default/gif/n_bill.gif">');
+								
+								/*Bill Payment Image Size Changed - 24/07/2013- ShahzadD*/
+
+								document.write('</a>');
+								document.write('<span style="font-size: 90%;color:red;margin-left:-30px;margin-top: -0px;padding: 0px 0px;float: left;" title="New">');
+								document.write ('<img border="0" alt="New" height="12" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+								document.write('</span>');
+								document.write('</div>');
+							}else{
+								/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+							document.write('<a title="BillPay &amp; Recharge" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'43\',BILL_MNEMONIC);" href="javascript:void(0)">');
+
+								/*Bill Payment Image Size Changed - 24/07/2013- ShahzadD*/
+								
+							                document.write ('<img border="0" height="42" width="137" name="img_bill" alt="BillPay &amp; Recharge" src="default/gif/n_bill.gif">');
+								
+								/*Bill Payment Image Size Changed - 24/07/2013- ShahzadD*/
+
+							document.write('</a>');
+							}
+
+						}else{
+
+							/*Bill Payment Image Size Changed - 24/07/2013- ShahzadD*/
+							
+							        document.write ('<img border="0" height="42" width="137" alt="BillPay &amp; Recharge" src="default/gif/n_bill.gif">');
+							
+							/*Bill Payment Image Size Changed - 24/07/2013- ShahzadD*/
+
+						}
+
+
+
+						if(bCreditCardFlag){
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+							if(bFlashCreditCardFlag) {
+								document.write('<div style="float: left;">');
+								document.write('<a title="Cards" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'30\', CARD_MNEMONIC);" href="javascript:void(0)">');
+
+								document.write ('<img border="0" height="42" width="57" name="img_ccp" alt="Cards" src="default/gif/n_cards.gif">');
+
+								document.write('</a>');
+								document.write('<span style="font-size: 90%;color:red;margin-left:-30px;margin-top: -0px;padding: 0px 0px;float: left;" title="New">');
+								document.write ('<img border="0" alt="New" height="13" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+								document.write('</span>');
+								document.write('</div>');
+							} else {
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+							document.write('<a title="Cards" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'30\', CARD_MNEMONIC);" href="javascript:void(0)">');
+
+							document.write ('<img border="0" height="42" width="57" name="img_ccp" alt="Cards" src="default/gif/n_cards.gif">');
+
+							document.write('</a>');
+							}
+
+
+						}else{
+
+							document.write ('<img border="0" alt="Cards" height="42" width="57" src="default/gif/n_cards.gif">');
+
+						}
+
+
+
+						if(bDematFlag){
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+							
+							if(bFlashDematFlag) {
+
+								document.write('<div style="float: left;">');
+
+								document.write('<a title="Demat" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'21\',DEMAT_MNEMONIC);" href="javascript:void(0)">');
+
+								document.write ('<img border="0" name="img_demat" alt="Demat" height="42" width="61" src="default/gif/n_demat.gif">');
+
+								document.write('</a>');
+
+								document.write('<span style="font-size: 90%;color:red;margin-left:-30px;margin-top: -0px;padding: 0px 0px;float: left;" title="New">');
+								document.write ('<img border="0" alt="New" height="13" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+								document.write('</span>');
+								document.write('</div>');
+							} else {
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+
+							document.write('<a title="Demat" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'21\',DEMAT_MNEMONIC);" href="javascript:void(0)">');
+
+							document.write ('<img border="0" name="img_demat" alt="Demat" height="42" width="61" src="default/gif/n_demat.gif">');
+
+							document.write('</a>');
+							}
+
+						}else{
+
+						// document.write ('<img border="0" alt="Demat" height="42" width="61" src="default/gif/n_demat.gif">');
+
+						}
+
+
+
+						if(bMerchantFlag){
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+							if(bFlashMerchantFlag) {
+								document.write('<div style="float: left;">');
+
+								document.write('<a title="Merchant Services" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'12\', MERCH_MNEMONIC);" href="javascript:void(0)">');
+
+								document.write ('<img border="0" name="img_merch" alt="Merchant Services" height="42" width="128" src="default/gif/n_merch.gif">');
+
+								document.write('</a>');
+
+								document.write('<span style="font-size: 90%;color:red;margin-left:-30px;margin-top: -0px;padding: 0px 0px;float: left;" title="New">');
+								document.write ('<img border="0" alt="New" height="12" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+								document.write('</span>');
+								document.write('</div>');
+							} else {
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+							document.write('<a title="Merchant Services" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'12\', MERCH_MNEMONIC);" href="javascript:void(0)">');
+
+							document.write ('<img border="0" name="img_merch" alt="Merchant Services" height="42" width="128" src="default/gif/n_merch.gif">');
+
+							document.write('</a>');
+							}
+
+						}
+
+						if(bDepositoryFlag){
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+
+							if(bFlashDepositoryFlag) {
+								document.write('<div style="float: left;">');
+								document.write('<a title="Broker Services" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'61\', BROKER_MNEMONIC);" href="javascript:void(0)">');
+
+								document.write ('<img border="0" height="42" width="115" name="img_brk" alt="Broker Services" src="default/gif/n_broker.gif">');
+
+								document.write('</a>');
+															document.write('<span style="font-size: 90%;color:red;margin-left:-30px;margin-top: -0px;padding: 0px 0px;float: left;" title="New">');
+								document.write ('<img border="0" alt="New" height="12" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+								document.write('</span>');
+								document.write('</div>');
+							} else {
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+							document.write('<a title="Broker Services" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'61\', BROKER_MNEMONIC);" href="javascript:void(0)">');
+
+							document.write ('<img border="0" height="42" width="115" name="img_brk" alt="Broker Services" src="default/gif/n_broker.gif">');
+
+							document.write('</a>');
+
+						}
+
+						}
+
+						if(bInvFlag){
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+							if(bFlashInvFlag) {
+								document.write('<div style="float: left;">');
+
+								document.write('<a title="Mutual Fund" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'81\', INV_MNEMONIC);" href="javascript:void(0)">'); //81
+
+								document.write ('<img border="0" height="42" width="97" name="img_inv" alt="Mutual Fund" src="default/gif/n_mutual_fund.gif">');
+
+								document.write('</a>');
+								document.write('<span style="font-size: 90%;color:red;margin-left:-30px;margin-top: -0px;padding: 0px 0px;float: left;" title="New">');
+								document.write ('<img border="0" alt="New" height="12" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+								document.write('</span>');
+								document.write('</div>');
+							} else {
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+							document.write('<a title="Mutual Fund" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'81\', INV_MNEMONIC);" href="javascript:void(0)">'); //81
+
+							document.write ('<img border="0" height="42" width="97" name="img_inv" alt="Mutual Fund" src="default/gif/n_mutual_fund.gif">');
+
+							document.write('</a>');
+
+						}
+
+						}
+						
+						if(false){
+						//if(bDebitCardFlag){
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+							if(bFlashDebitCardFlag) {
+								document.write('<div style="float: left;">');
+
+								document.write('<a title="Debit Cards" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'32\', DCARD_MNEMONIC);" href="javascript:void(0)">');
+
+								document.write ('<img border="0" width="77" height="42" name="img_dcp" alt="Debit Cards" src="default/gif/n_debit.gif">');
+
+								document.write('</a>');
+								document.write('<span style="font-size: 90%;color:red;margin-left:-30px;margin-top: -0px;padding: 0px 0px;float: left;" title="New">');
+								document.write ('<img border="0" alt="New" height="12" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+								document.write('</span>');
+								document.write('</div>');
+							} else {
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+							document.write('<a title="Debit Cards" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'32\', DCARD_MNEMONIC);" href="javascript:void(0)">');
+
+							document.write ('<img border="0" width="77" height="42" name="img_dcp" alt="Debit Cards" src="default/gif/n_debit.gif">');
+
+							document.write('</a>');
+							}
+
+						}
+
+
+						/* NetBanking UI Revamp-13/08/2014-Sandeep Saxena-ADDED-Start */                    
+						       if(bInsurFlag){							
+								if(bFlashInsurerFlag) {
+									document.write('<div style="float: left;">');
+									document.write('<a title="Insurance" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'48\',INSURANCE_MNEMONIC);" href="javascript:void(0)">');
+									document.write ('<img border="0" height="42" width="82" name="img_insur" alt="Insurance" src="default/gif/n_insurance.gif">');
+									document.write('</a>');
+									document.write('<span style="font-size: 90%;color:red;margin-left:-30px;margin-top: -0px;padding: 0px 0px;float: left;" title="New">');
+									document.write ('<img border="0" alt="New" height="12" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+									document.write('</span>');
+									document.write('</div>');
+								} else {							
+									document.write('<a title="Insurance" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'48\',INSURANCE_MNEMONIC);" href="javascript:void(0)">');
+									document.write ('<img border="0" height="42" width="82" name="img_insur" alt="Insurance" src="default/gif/n_insurance.gif">');
+									document.write('</a>');
+								}
+
+							}
+						/* NetBanking UI Revamp-13/08/2014-Sandeep Saxena-ADDED-End */	
+
+
+						if(bLoanFlag){
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-START */
+							if(bFlashLoanFlag) {
+								document.write('<div style="float: left;">');
+
+							document.write('<a title="Loans" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'44\',LOAN_MNEMONIC);" href="javascript:void(0)">');
+
+							document.write ('<img border="0" height="42" width="56" name="img_loan" alt="Loans" src="default/gif/n_loan.gif">');
+
+							document.write('</a>');
+								document.write('<span style="font-size: 90%;color:red;margin-left:-30px;margin-top: -0px;padding: 0px 0px;float: left;" title="New">');
+								document.write ('<img border="0" alt="New" height="12" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+								document.write('</span>');
+								document.write('</div>');
+							} else {
+							/* Retail-NewBubbleImg-22/02/2012-AnandraoH-END */
+								document.write('<a title="Loans" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'44\',LOAN_MNEMONIC);" href="javascript:void(0)">');
+
+								document.write ('<img border="0" height="42" width="56" name="img_loan" alt="Loans" src="default/gif/n_loan.gif">');
+
+								document.write('</a>');
+							}
+
+						}
+                                         	if(bOfferFlag){							
+							if(bFlashOfferFlag) {
+								document.write('<div style="float: left;">');
+								document.write('<a title="Offer" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'47\',OFFER_MNEMONIC);" href="javascript:void(0)">');
+								document.write ('<img border="0" height="42" width="58" name="img_offer" alt="Offer" src="default/gif/n_offers.gif">');
+								document.write('</a>');
+								document.write('<span style="font-size: 90%;color:red;margin-left:-30px;margin-top: -0px;padding: 0px 0px;float: left;" title="New">');
+								document.write ('<img border="0" alt="New" height="12" width="29" name="img_new" src="./gif/NewIcon2012.png">');
+								document.write('</span>');
+								document.write('</div>');
+							} else {							
+								document.write('<a title="Offer" target="_top" onclick="l_fireAppClicked = false; return fireApp (\'MNU\', \'47\',OFFER_MNEMONIC);" href="javascript:void(0)">');
+								document.write ('<img border="0" height="42" width="58" name="img_offer" alt="Offer" src="default/gif/n_offers.gif">');
+								document.write('</a>');
+							}
+
+						}
+
+						
+						if(!bMerchantFlag){
+
+					//		document.write ('<img border="0" height="27" width="104" src="./gif/tab_bg_end.gif">');
+
+						}
+
+						if(!bDepositoryFlag){
+
+					//		document.write ('<img border="0" height="27" width="90" src="./gif/tab_bg_end.gif">');
+
+						}
+
+						if(!bInvFlag){
+
+						//	document.write ('<img border="0" height="27" width="104" src="./gif/tab_bg_end.gif">');
+
+						}
+
+						if(!bDebitCardFlag){
+
+					//		document.write ('<img border="0" height="27" width="104" src="./gif/tab_bg_end.gif">');
+
+						}
+
+						if(!bLoanFlag){
+
+					//		document.write ('<img border="0" height="27" width="49" src="./gif/tab_bg_end.gif">');
+
+						}
+
+
+
+					//	document.write('<img height="27" width="27" src="./gif/tab_bg_end.gif">');
+
+					}
+
+					</script><a title="Accounts" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;41&#39;, ACCOUNT_MNEMONIC);" href="javascript:void(0)"><img border="0" alt="Accounts" height="42" width="80" name="img_acct" src="./s_account.gif"></a><a title="Funds Transfer" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;42&#39;,TPT_MNEMONIC);" href="javascript:void(0)"><img border="0" height="42" width="106" name="img_tpt" alt="Funds Transfer" src="./n_fund.gif"></a><a title="BillPay &amp; Recharge" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;43&#39;,BILL_MNEMONIC);" href="javascript:void(0)"><img border="0" height="42" width="137" name="img_bill" alt="BillPay &amp; Recharge" src="./n_bill.gif"></a><a title="Cards" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;30&#39;, CARD_MNEMONIC);" href="javascript:void(0)"><img border="0" height="42" width="57" name="img_ccp" alt="Cards" src="./n_cards.gif"></a><a title="Demat" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;21&#39;,DEMAT_MNEMONIC);" href="javascript:void(0)"><img border="0" name="img_demat" alt="Demat" height="42" width="61" src="./n_demat.gif"></a><a title="Mutual Fund" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;81&#39;, INV_MNEMONIC);" href="javascript:void(0)"><img border="0" height="42" width="97" name="img_inv" alt="Mutual Fund" src="./n_mutual_fund.gif"></a><a title="Insurance" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;48&#39;,INSURANCE_MNEMONIC);" href="javascript:void(0)"><img border="0" height="42" width="82" name="img_insur" alt="Insurance" src="./n_insurance.gif"></a><a title="Loans" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;44&#39;,LOAN_MNEMONIC);" href="javascript:void(0)"><img border="0" height="42" width="56" name="img_loan" alt="Loans" src="./n_loan.gif"></a><a title="Offer" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;47&#39;,OFFER_MNEMONIC);" href="javascript:void(0)"><img border="0" height="42" width="58" name="img_offer" alt="Offer" src="./n_offers.gif"></a></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<map name="Map">
+<area title="Change Password" alt="Change Password" target="_top" onclick="l_fireAppClicked = false;  return fireApp (&#39;MNU&#39;, &#39;97&#39;, PWD_MNEMONIC)" href="javascript:void(0)" coords="40,5,135,20" shape="rect">
+<area title="My Contact Details" alt="My Contact Details" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;96&#39;, ADDR_MNEMONIC)" href="javascript:void(0)" coords="144,6,198,20" shape="rect">
+<area title="Download MobileBanking" alt="Download MobileBanking" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;15&#39;, MOBREG_MNEMONIC)" href="javascript:void(0)" coords="28,30,72,45" shape="rect">
+<area title="Alerts" alt="Alerts" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;08&#39;, ALERT_MNEMONIC);" href="javascript:void(0)" coords="38,30,72,45" shape="rect">
+<area title="Mobile" alt="Mobile" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;08&#39;, MOBBKG_MNEMONIC);" href="javascript:void(0)" coords="60,30,100,45" shape="rect">
+<area title="Contact Us" alt="Contact Us" target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;MNU&#39;, &#39;98&#39;, EMAIL_MNEMONIC)" href="javascript:void(0)" coords="79,30,136,45" shape="rect">
+<area target="_top" title="Log Out" alt="Log Out" onclick="return Logout()" href="javascript:void(0)" coords="264,2,340,22" shape="rect">
+<area onclick="return false;" href="javascript:void(0)" coords="156,31,217,44" shape="rect">
+<area onclick="return contexthelppop();" href="javascript:void(0)" coords="232,31,257,44" shape="rect">
+</map>
+<map name="Map2Map">
+<area target="_top" onclick="l_fireAppClicked = false; return fireApp (&#39;mnu&#39;, &#39;41&#39;, account_mnemonic);" href="javascript:void(0)" coords="38,7,226,21" shape="rect">
+<area target="_top" title="Log Out" alt="Log Out" onclick="return Logout()" href="javascript:void(0)" coords="267,3,339,21" shape="rect">
+</map>
+</form>
+<form action="https://netbanking.hdfcbank.com/netbanking/entry" method="post" name="frmMenu">
+<input value="RS" name="fldAppId" type="hidden"><input value="" name="fldTxnId" type="hidden"><input value="01" name="fldScrnSeqNbr" type="hidden"><input value="" name="fldTxnRequest" type="hidden"><input value="426385838WREMJATJO" name="fldSessionId" type="hidden"><input value="426385838WREMJATJO101534673KY" name="fldRequestId" type="hidden"><script language="javascript">
+
+		if(l_txn_req != PWD_MNEMONIC)
+
+
+			fireApp ('MNU','41', l_txn_req);
+
+	</script>
+</form>
+
+
+</body></html>

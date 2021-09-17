@@ -1,0 +1,473 @@
+		
+// Wrap an HTMLElement around each element in an HTMLElement array.
+function wrapElem(thisEle, elms) {
+    // Convert `elms` to an array, if necessary.
+    if (!elms.length) elms = [elms];
+    
+    // Loops backwards to prevent having to clone the wrapper on the
+    // first element (see `child` below).
+    for (var i = elms.length - 1; i >= 0; i--) {
+        var child = (i > 0) ? thisEle.cloneNode(true) : thisEle;
+        var el    = elms[i];
+        
+        // Cache the current parent and sibling.
+        var parent  = el.parentNode;
+        var sibling = el.nextSibling;
+        
+        // Wrap the element (is automatically removed from its current
+        // parent).
+        child.appendChild(el);
+        
+        // If the element had a sibling, insert the wrapper before
+        // the sibling to maintain the HTML structure; otherwise, just
+        // append it to the parent.
+        if (sibling) {
+            parent.insertBefore(child, sibling);
+        } else {
+            parent.appendChild(child);
+        }
+    }
+};
+
+
+var checkboxHeight = "11";
+var radioHeight = "8";
+var selectWidth = "300";
+
+/* No need to change anything after this */
+
+function trimByPixel(str, width, id) {
+    var spn = $('<span style="visibility:hidden;display:none;" id="trim'+id+'"></span>').text(str).appendTo('div');
+    var txt = str;
+//	alert(" spn.width = "+spn.width()+" width = "+width);
+    while (spn.width() > width) { txt = txt.slice(0, -1); spn.text(txt + "..."); }
+    return txt;
+}
+
+function getwidth(txt, name){
+	var span= document.createElement("span");
+	span.id= 'temp'+name;
+	span.style.visibility= 'hidden';
+	span.style.padding= '0';
+	span.style.whiteSpace= 'pre';
+	document.body.appendChild(span);
+	var result= location.href;
+	span.innerHTML= txt;
+	
+	return span.offsetWidth;
+	
+}
+ var yesNoArr;
+window.yesClicked=false; 
+function funBind(){
+
+	  if ( !document.querySelectorAll ) {
+			(function(d, s) {
+			d=document, s=d.createStyleSheet();
+			d.querySelectorAll = function(r, c, i, j, a) {
+			a=d.all, c=[], r = r.replace(/\[for\b/gi, '[htmlFor').split(',');
+			for (i=r.length; i--;) {
+			s.addRule(r[i], 'k:v');
+			for (j=a.length; j--;) a[j].currentStyle.k && c.push(a[j]);
+			s.removeRule(0);
+			}
+			return c;
+			}
+			})()
+		}
+       
+        yesNoArr=document.querySelectorAll(".disabledRadio");
+
+		 for(var i=0;i<yesNoArr.length;i++)
+		 {
+			var element = document.createElement('span');
+			  element.className="mySpan";
+			  //element.style.border='1px solid';
+			  element.style.height='16px';
+			  element.style.width='16px';
+			  element.style.verticalAlign='middle';
+			  element.style.position='absolute';	 
+			  element.style.marginTop='0px';
+			  element.style.zIndex='100';
+			  element.style.display='inline-block';
+			  element.style.visibility='visible';
+			  element.style.position='absolute';
+			  
+			// yesNoArr[i].parentNode.insertBefore(element,yesNoArr[i].parentNode.firstChild);
+			 yesNoArr[i].parentNode.insertBefore(element,yesNoArr[i]);
+			//yesNoArr[i].before(element);
+		}
+		var yesobj=document.querySelectorAll("Y");
+		var noobj=document.querySelectorAll("N");
+	}
+/*document.write('<style>input.styled { display: none; } select.styled { position: relative; width: ' + selectWidth + 'px; opacity: 0; filter: alpha(opacity=0); z-index: 5; } .disabled { opacity: 0.5; filter: alpha(opacity=50); }</style>');*/
+var Custom = {
+	init: function() {
+	
+		
+		var inputs = document.getElementsByTagName("input"), span = Array(), textnode, option, active;
+		
+
+		for(a = 0; a < inputs.length; a++) {
+		
+			//Account Balance
+			if(inputs[a].type == "text" && (inputs[a].name == "balance" || inputs[a].name == "srcrdbalance" || inputs[a].name == "srctdbalance" ))
+			{
+				var spanBal = document.createElement("span");
+				spanBal.className = 'rsIcon21 inline';
+				
+				//inputs[a].parentNode.insertBefore(spanBal, inputs[a]);
+				inputs[a].className='txtAmt18';
+				inputs[a].size='25';
+
+				var div = document.createElement('div');
+				div.className = 'clearB top5';
+				//div.id=	'rupeesymb';//Netbanking UI Revamp
+				//wrapElem(div, spanBal);
+				wrapElem(div, inputs[a]);
+				//document.getElementById('rupeesymb').style.display="none";//Netbanking UI Revamp
+	
+			}
+			
+			if((inputs[a].type == "checkbox" || inputs[a].type == "radio")/* && inputs[a].className == "styled"*/) {
+				span[a] = document.createElement("span");
+				span[a].className = inputs[a].type;
+				inputs[a].className=inputs[a].type+"Element";
+				if(!inputs[a].getAttribute("onclick")) {}
+				else {
+					span[a].setAttribute('onclick',inputs[a].getAttribute("onclick"));
+				}
+
+				if(inputs[a].checked == true) {
+					if(inputs[a].type == "checkbox") {
+						position = "0 -" + (checkboxHeight*2) + "px";
+						span[a].style.backgroundPosition = position;
+					} else {
+						position = "0 -" + (radioHeight*2) + "px";
+						span[a].style.backgroundPosition = position;
+					}
+				}
+				inputs[a].parentNode.insertBefore(span[a], inputs[a]);
+
+					if (inputs[a].attachEvent)
+					{	
+						//for IE8 and less
+						inputs[a].attachEvent("onchange", Custom.clear);
+					}
+					else
+					{
+						inputs[a].addEventListener("change", Custom.clear, false);
+					}
+					
+					
+					
+								if(inputs[a].disabled==false) {
+									/* span[a].onmousedown = Custom.pushed; */
+									span[a].onmouseup = Custom.check;
+								} else {
+								
+                                    if(inputs[a].type == "radio")
+                                    {									
+									span[a].className = span[a].className + " disabledRadio";
+									}
+									else{
+									span[a].className = span[a].className + " disabled";
+									}
+									
+								}
+						
+			}
+		}
+		inputs = document.getElementsByTagName("select");
+		
+		for(a = 0; a < inputs.length; a++) {
+			if(inputs[a]) {
+			
+				option = inputs[a].getElementsByTagName("option");
+				active = option[0].childNodes[0].nodeValue;
+				textnode = document.createTextNode(active);
+				for(b = 0; b < option.length; b++) {
+					if(option[b].selected == true) {
+						oseloption = option[b].childNodes[0].nodeValue;
+						textnode = document.createTextNode(oseloption.substring(0,100));
+						//textnode = document.createTextNode(oseloption);
+
+						//var offWidth = getwidth(oseloption, inputs[a].name);
+						
+						//var wid = (document.documentElement.clientWidth) - (offWidth / 2.432) ;
+						//oseloption = trimByPixel(oseloption,wid, inputs[a].name);
+						
+						//textnode = document.createTextNode(oseloption);
+					}
+				}
+				span[a] = document.createElement("span");
+				span[a].className = "select";
+				span[a].id = "select" + inputs[a].name+a; //Avinash 6/29/2016::Changed id of select element
+				span[a].appendChild(textnode);
+				inputs[a].parentNode.insertBefore(span[a], inputs[a]);
+
+					if (inputs[a].attachEvent)
+					{	//for IE8 and less
+						inputs[a].attachEvent("onchange", Custom.choose);
+					}
+					else
+					{
+						inputs[a].addEventListener("change", Custom.choose, false);
+					}
+
+					if(inputs[a].getAttribute("disabled")) {
+							inputs[a].previousSibling.className = inputs[a].previousSibling.className + " disabled";
+					}
+				/*
+				if(!inputs[a].getAttribute("disabled")) {
+					//inputs[a].onchange = Custom.choose;
+			
+					if (inputs[a].attachEvent)
+					{	//for IE8 and less
+						inputs[a].attachEvent("onchange", Custom.choose);
+					}
+					else
+					{
+						inputs[a].addEventListener("change", Custom.choose, false);
+					}
+   
+				} else {
+					inputs[a].previousSibling.className = inputs[a].previousSibling.className + " disabled";
+				}
+				*/
+			}
+		}
+		//document.onmouseup = Custom.clear;
+		
+		if ( !document.querySelectorAll ) {
+			(function(d, s) {
+			d=document, s=d.createStyleSheet();
+			d.querySelectorAll = function(r, c, i, j, a) {
+			a=d.all, c=[], r = r.replace(/\[for\b/gi, '[htmlFor').split(',');
+			for (i=r.length; i--;) {
+			s.addRule(r[i], 'k:v');
+			for (j=a.length; j--;) a[j].currentStyle.k && c.push(a[j]);
+			s.removeRule(0);
+			}
+			return c;
+			}
+			})()
+		}
+		var spanObjRad=document.querySelectorAll(".radio");
+		//var inputs = document.getElementsByTagName("input");
+        for(var j=0;j<spanObjRad.length;j++)
+		{
+		  
+			spanObjRad[j].onmousedown = Custom.clear;							
+		}
+		var spanObjCheck=document.querySelectorAll(".checkbox");
+		//var inputs = document.getElementsByTagName("input");
+        for(var j=0;j<spanObjCheck.length;j++)
+		{
+		  
+			spanObjCheck[j].onmousedown = Custom.clear;							
+		}
+		funBind();
+	},
+/* 	pushed: function() {
+		element = this.nextSibling;
+		if(element.checked == true && element.type == "checkbox") {
+			this.style.backgroundPosition = "0 -" + checkboxHeight*3 + "px";
+		} else if(element.checked == true && element.type == "radio") {
+			this.style.backgroundPosition = "0 -" + radioHeight*3 + "px";
+		} else if(element.checked != true && element.type == "checkbox") {
+			this.style.backgroundPosition = "0 -" + checkboxHeight + "px";
+		} else {
+			this.style.backgroundPosition = "0 -" + radioHeight + "px";
+		}
+	}, */
+	check: function() {
+		//alert('in check test by niraj ofss');
+		element = this.nextSibling;
+		if(element.checked == true && element.type == "checkbox") {
+			this.style.backgroundPosition = "0 0";
+			element.checked = false;
+		} else {
+			if(element.type == "checkbox") {
+				this.style.backgroundPosition = "0 -" + checkboxHeight*2 + "px";
+			} else {
+				this.style.backgroundPosition = "0 -" + radioHeight*2 + "px";
+				group = this.nextSibling.name;
+				inputs = document.getElementsByTagName("input");
+				for(a = 0; a < inputs.length; a++) {
+					if(inputs[a].name == group && inputs[a] != this.nextSibling) {
+						inputs[a].previousSibling.style.backgroundPosition = "0 0";
+					}
+				}
+			}
+			element.checked = true;
+		}
+	},
+	clear: function() {
+		//alert('in clear test by niraj ofss');
+		inputs = document.getElementsByTagName("input");
+		for(var b = 0; b < inputs.length; b++) {
+
+			if(inputs[b].type == "checkbox" && inputs[b].checked == true /*&& inputs[b].className == "styled"*/) {
+				inputs[b].previousSibling.style.backgroundPosition = "0 -" + checkboxHeight*2 + "px";
+			} else if(inputs[b].type == "checkbox" /*&& inputs[b].className == "styled"*/) {
+				inputs[b].previousSibling.style.backgroundPosition = "0 0";
+			} else if(inputs[b].type == "radio" && inputs[b].checked == true /*&& inputs[b].className == "styled"*/) {
+				inputs[b].previousSibling.style.backgroundPosition = "0 -" + radioHeight*2 + "px";
+			} else if(inputs[b].type == "radio" /*&& inputs[b].className == "styled"*/) {
+				inputs[b].previousSibling.style.backgroundPosition = "0 0";
+			}
+		}
+		//
+		
+		
+		if(this.className == 'radio')
+		{
+		
+		       var inputs = document.querySelectorAll(".radioElement");
+				setTimeout(function(){
+					for(z = 0; z < inputs.length; z++) {
+					
+						if(inputs[z].getAttribute("disabled")) {
+							$('.radioElement:disabled').prev().addClass("disabledRadio");
+						}else if(!inputs[z].getAttribute("disabled")){
+							
+							  if(yesClicked == true)
+							  {
+							       $(':radio:not(:disabled)').prev().removeClass("disabledRadio");
+								   for(var i=0;i<yesNoArr.length;i++)
+								   {
+									
+									   if(!yesNoArr[i].getAttribute("disabled")) {
+										 yesNoArr[i].onmouseup = Custom.check;
+									   }   
+								   }  
+							  }else{
+							   
+							   $('.radioElement:disabled').prev().addClass("disabledRadio");
+							  }
+						}
+					}
+					       var mySpanObj1 = document.querySelectorAll(".mySpan");
+						  
+						  for(var j=0;j<mySpanObj1.length;j++)
+									 {
+									   
+									   if(yesClicked == true){
+									  
+									   
+
+									        if(!(yesNoArr[j].className == "radio disabledRadio"))
+											{
+												mySpanObj1[j].style.visibility='hidden';
+											}  
+
+
+									   
+									   }else{
+									   mySpanObj1[j].style.visibility='visible';
+									   }
+									  
+									 
+									 }
+				},200);	
+	  }			
+	},
+	
+	choose: function() {
+
+		var elemnts = document.getElementsByTagName("select");
+		for(a = 0; a < elemnts.length; a++) {
+			chooseExplicit(elemnts[a]);
+		}
+
+		for(d = 0; d < this.length; d++) {
+
+			if(this.options[d].selected == true) {
+				soptval =  this.options[d].childNodes[0].nodeValue;
+				document.getElementById("select" + this.name).childNodes[0].nodeValue = soptval.substring(0,100);
+				//document.getElementById("select" + this.name).childNodes[0].nodeValue = soptval;
+			}
+		}
+		
+		
+		
+		
+		
+	}
+}
+
+ if (window.attachEvent)
+{	
+//for IE8 and less
+	window.attachEvent("onload", Custom.init);
+}
+else
+{
+	window.addEventListener("load", Custom.init, false);
+}
+
+
+function chooseExplicit(ele)
+{
+		var option = ele.getElementsByTagName("option");
+		var soptval;
+		for(d = 0; d < option.length; d++) {
+			if(option[d].selected == true) {
+				soptval =  option[d].childNodes[0].nodeValue;
+				ele.previousSibling.childNodes[0].nodeValue = soptval.substring(0,100);
+			}
+		}
+}
+function clearFormExplicit()
+{
+		var elemnts = document.getElementsByTagName("select");
+		for(var a = 0; a < elemnts.length; a++) {
+			var option  = elemnts[a].getElementsByTagName("option");
+			var soptval =  option[0].childNodes[0].nodeValue;
+			elemnts[a].previousSibling.childNodes[0].nodeValue = soptval.substring(0,100);
+		}
+		
+		
+		var inputs = document.getElementsByTagName("input");
+		for(var b = 0; b < inputs.length; b++) {
+
+			if(inputs[b].type == "radio" && inputs[b].checked == true ) {
+				inputs[b].previousSibling.style.backgroundPosition = "0 -" + radioHeight*2 + "px";
+			} else if(inputs[b].type == "radio" ) {
+				inputs[b].previousSibling.style.backgroundPosition = "0 0";
+			}
+			else if(inputs[b].type == "checkbox" && inputs[b].checked == true ) {
+				inputs[b].previousSibling.style.backgroundPosition = "0 -" + checkboxHeight*2 + "px";
+			} else if(inputs[b].type == "checkbox" ) {
+				inputs[b].previousSibling.style.backgroundPosition = "0 0";
+			}
+		}
+}
+
+
+function refreshFormExplicit()
+{
+		
+		var inputs = document.getElementsByTagName("input");
+		for(var b = 0; b < inputs.length; b++) {
+
+			if(inputs[b].type == "radio" && inputs[b].checked == true ) {
+				inputs[b].previousSibling.style.backgroundPosition = "0 -" + radioHeight*2 + "px";
+			} else if(inputs[b].type == "radio" ) {
+				inputs[b].previousSibling.style.backgroundPosition = "0 0";
+			}
+			else if(inputs[b].type == "checkbox" && inputs[b].checked == true ) {
+				inputs[b].previousSibling.style.backgroundPosition = "0 -" + checkboxHeight*2 + "px";
+			} else if(inputs[b].type == "checkbox" ) {
+				inputs[b].previousSibling.style.backgroundPosition = "0 0";
+			}
+		}
+}
+
+
+
+
+
+
+

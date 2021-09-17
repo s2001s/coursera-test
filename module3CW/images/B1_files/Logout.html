@@ -1,0 +1,27 @@
+
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<script language="javascript">
+	function Logout(){
+		if(parent.frames['main_part'].count == 'EOS' || parent.frames['common_menu1'].count == 'EOS' || top.count=='EOS' ){
+			return false;
+		//shahzad 24 aug 2011 START
+		}else if(parent.frames['left_menu'].sel_txnid !='LGF' && parent.frames['left_menu'].sel_txnid !='TPE'){
+		//shahzad 24 aug 2011 END			
+							parent.frames['common_menu1'].Logout();
+			return false;
+		}
+	}
+</script>
+<!-- Sannidhi Acharya: Back Button Issue Login through Logout page fix 02 May 2019 START -->
+<script type="text/javascript">
+	if(sessionStorage.getItem('url') != null){
+		sessionStorage.removeItem('url');
+	}
+</script>
+<!-- Sannidhi Acharya: Back Button Issue Login through Logout page fix 02 May 2019 END -->
+</head>
+<body onunload="return Logout();" marginwidth="0" marginheight="0">
+
+</body></html>
